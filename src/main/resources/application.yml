@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: smc2012
+    url: jdbc:mysql://192.168.3.211:3306/kxb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+server:
+  port: 8081
+  compression:
+    enabled: true
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

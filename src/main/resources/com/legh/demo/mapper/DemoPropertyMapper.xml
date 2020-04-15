@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.legh.demo.mapper.DemoPropertyMapper">
+  <resultMap id="BaseResultMap" type="com.legh.demo.model.domain.DemoProperty">
+    <id column="property_id" jdbcType="VARCHAR" property="propertyId" />
+    <result column="property_code" jdbcType="VARCHAR" property="propertyCode" />
+    <result column="property_name" jdbcType="VARCHAR" property="propertyName" />
+    <result column="order_index" jdbcType="INTEGER" property="orderIndex" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <select id="listByName" resultMap="BaseResultMap">
+      select * from demo_property where property_name = #{propertyName}
+      order by create_time desc
+  </select>
+</mapper>
